@@ -35,7 +35,8 @@ obj = prediction()
 
 
 @app.route('/predict', methods=['POST', 'GET', 'OPTIONS'])
-@cross_origin(supports_credentials=True)
+@cross_origin(origin='*',headers=['Content-Type','Authorization'])
+# @cross_origin(supports_credentials=True)
 def index():
     if(request.method == 'POST'):
         data = request.get_json()
